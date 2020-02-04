@@ -1,0 +1,11 @@
+<div class="login-wrapper">
+    Username:<br />
+    <input type="text" name="userName" [(ngModel)]="userName" />
+    <br />
+    Password:<br />
+    <input type="text" name="pswd"  [(ngModel)]="password"  />
+    <br /><br />
+    <div class="example-button-row">
+      <button (click)="authenticateUser()">Submit</button>
+    </div>
+</div>
