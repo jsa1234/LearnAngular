@@ -7,8 +7,17 @@ export class UserDataServiceService {
 
   constructor() { }
 
+  setUserDetailsToLocalstorage(userName: string, password: string) {
+    localStorage.setItem("uname", userName)
+    localStorage.setItem("upass", password)
+  }
+
+  getLoggedinUserName(): string {
+    return localStorage.getItem("uname")
+  }
+
   getUserDetails() {
-    const user = [{
+    const users = [{
       name: "rahul",
       age: 23,
       mark: 66
@@ -22,6 +31,6 @@ export class UserDataServiceService {
       mark: 40
     }]
 
-    return user;
+    return users;
   }
 }

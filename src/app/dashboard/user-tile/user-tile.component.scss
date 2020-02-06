@@ -1,17 +1,27 @@
 .user-tile {
   height: 50px;
   width: 100%;
-  background-color: brown;
+  background-color: #bcf1df;
 
   .section1 {
     width: 50%;
     float: left;
+
   }
 
   .section2 {
     width: 50%;
     float: left;
+
   }
 
+  .poor {
+    background-color: red;
+    font-weight: bold;
+  }
+
+  .good {
+    background-color: green;
+  }
 
 }

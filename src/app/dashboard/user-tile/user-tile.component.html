@@ -1,8 +1,8 @@
 <div class="user-tile">
   <div class="section1">
-    {{userDetails.name}}
+    {{userDetails.name}}, {{userDetails.age}}
   </div>
-  <div class="section2">
-    {{userDetails.mark}}
+  <div class="section2" [ngClass]="{'poor': (userDetails.mark < 90), 'good': (userDetails.mark > 90)}">
+    {{userDetails.mark}} - <span *ngIf="userDetails.mark < 90">poor</span> <span *ngIf="userDetails.mark > 90">very good</span>
   </div>
 </div>

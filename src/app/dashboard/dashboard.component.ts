@@ -10,7 +10,8 @@ import { UserDataServiceService } from '../userService/user-data-service.service
 })
 export class DashboardComponent implements OnInit {
 
-  users = {};
+  users = [];
+  userName: string;
 
   constructor(private router: Router, private route: ActivatedRoute, private userservice: UserDataServiceService) {
 
@@ -18,10 +19,29 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.initializeUser();
+    this.getUserName();
+  }
+
+  getUserName() {
+    this.userName = this.userservice.getLoggedinUserName();
   }
 
   initializeUser() {
     this.users = this.userservice.getUserDetails();
+  }
+
+  processUserData(users) {
+    users.map(user=> {
+      if(user.mark > 90) {
+        user.status = "very good";
+      } else {
+        user.status = "poor";
+      }
+    });
+
+    //users = users.filter(user=> user.mark>90);
+
+    return users;
   }
 
   logout() {
